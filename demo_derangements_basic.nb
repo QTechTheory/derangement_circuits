@@ -10,17 +10,17 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     97809,       1877]
-NotebookOptionsPosition[     92791,       1792]
-NotebookOutlinePosition[     93162,       1808]
-CellTagsIndexPosition[     93119,       1805]
+NotebookDataLength[     97885,       1877]
+NotebookOptionsPosition[     92867,       1792]
+NotebookOutlinePosition[     93238,       1808]
+CellTagsIndexPosition[     93195,       1805]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[TextData[{
  "This notebook demonstrates how derangement (permutation) circuits of the \
-Error Suppression by Derangement (ESD) [arXiv:2011.05942] and Virtual \
+Error Suppression by Derangements (ESD) [arXiv:2011.05942] and Virtual \
 Distillation (VD) [arXiv:2011.07064] techniques can be constructed and used \
 to suppress errors in noisy quantum devices. The approach takes ",
  StyleBox["n",
@@ -28,8 +28,7 @@ to suppress errors in noisy quantum devices. The approach takes ",
  " copies of a noisy quantum circuit and reduces errors exponentially as ",
  Cell[BoxData[
   FormBox[
-   SuperscriptBox["Q", "n"], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
+   SuperscriptBox["Q", "n"], TraditionalForm]],ExpressionUUID->
   "fd7ccc6a-d6de-40c9-8d23-297780096266"],
  ", where ",
  StyleBox["Q",
@@ -37,12 +36,13 @@ to suppress errors in noisy quantum devices. The approach takes ",
  "<1."
 }], "Text",
  CellChangeTimes->{{3.8262650902861843`*^9, 3.826265091099492*^9}, {
-  3.8262652312441196`*^9, 3.826265473334661*^9}, {3.8264936657315893`*^9, 
-  3.826493710958598*^9}, {3.826493827200305*^9, 3.8264938282809477`*^9}, {
-  3.8264939742007303`*^9, 3.82649405518382*^9}, {3.8272392140975666`*^9, 
-  3.827239224966739*^9}, {3.827239268488271*^9, 3.8272392931488256`*^9}, {
-  3.8272393731400995`*^9, 3.827239508033763*^9}, {3.8272397502116723`*^9, 
-  3.8272397561584396`*^9}, {3.827241583498407*^9, 3.8272416495424733`*^9}},
+   3.8262652312441196`*^9, 3.826265473334661*^9}, {3.8264936657315893`*^9, 
+   3.826493710958598*^9}, {3.826493827200305*^9, 3.8264938282809477`*^9}, {
+   3.8264939742007303`*^9, 3.82649405518382*^9}, {3.8272392140975666`*^9, 
+   3.827239224966739*^9}, {3.827239268488271*^9, 3.8272392931488256`*^9}, {
+   3.8272393731400995`*^9, 3.827239508033763*^9}, {3.8272397502116723`*^9, 
+   3.8272397561584396`*^9}, {3.827241583498407*^9, 3.8272416495424733`*^9}, 
+   3.827244314877225*^9},
  Background->RGBColor[
   0.88, 1, 0.88],ExpressionUUID->"edeb8f40-1ecb-4621-b0ed-e34a18b3ac59"],
 
@@ -609,7 +609,7 @@ Cell["Noisy circuit that generates GHZ states", "Subsubsection",
 92eb0e349739"],
 
 Cell[TextData[{
- "Construct a nosy quantum circuit that generates an ",
+ "Construct a noisy quantum circuit that generates an ",
  StyleBox["n",
   FontSlant->"Italic"],
  "-qubit GHZ state (|0,0,0,0,0\[RightAngleBracket]+|1,1,1,1,1\
@@ -619,15 +619,15 @@ Cell[TextData[{
  " with noise rate \[Epsilon]"
 }], "Text",
  CellChangeTimes->{{3.8262650902861843`*^9, 3.826265091099492*^9}, {
-  3.8262652312441196`*^9, 3.826265473334661*^9}, {3.8264936657315893`*^9, 
-  3.826493710958598*^9}, {3.826493827200305*^9, 3.8264938282809477`*^9}, {
-  3.8264939742007303`*^9, 3.82649405518382*^9}, {3.8272392140975666`*^9, 
-  3.827239224966739*^9}, {3.827239268488271*^9, 3.8272392931488256`*^9}, {
-  3.827239343424307*^9, 3.8272393559192715`*^9}, {3.8272395839220505`*^9, 
-  3.827239589466489*^9}, {3.827240071375389*^9, 3.8272400906643705`*^9}, {
-  3.8272401554151773`*^9, 3.8272401678247633`*^9}, {3.8272402594347553`*^9, 
-  3.827240276773361*^9}, {3.8272403088310623`*^9, 3.8272403260443497`*^9}, {
-  3.827240477147238*^9, 3.8272404849000597`*^9}},
+   3.8262652312441196`*^9, 3.826265473334661*^9}, {3.8264936657315893`*^9, 
+   3.826493710958598*^9}, {3.826493827200305*^9, 3.8264938282809477`*^9}, {
+   3.8264939742007303`*^9, 3.82649405518382*^9}, {3.8272392140975666`*^9, 
+   3.827239224966739*^9}, {3.827239268488271*^9, 3.8272392931488256`*^9}, {
+   3.827239343424307*^9, 3.8272393559192715`*^9}, {3.8272395839220505`*^9, 
+   3.827239589466489*^9}, {3.827240071375389*^9, 3.8272400906643705`*^9}, {
+   3.8272401554151773`*^9, 3.8272401678247633`*^9}, {3.8272402594347553`*^9, 
+   3.827240276773361*^9}, {3.8272403088310623`*^9, 3.8272403260443497`*^9}, {
+   3.827240477147238*^9, 3.8272404849000597`*^9}, 3.8272442980278726`*^9},
  Background->RGBColor[
   0.88, 1, 0.88],ExpressionUUID->"a6f2a76d-5e5d-4f63-996d-35b069580392"],
 
@@ -1194,14 +1194,13 @@ ancilla qubit ",
  Cell[BoxData[
   FormBox[
    RowBox[{
-    SubscriptBox["prob", "0"], "="}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
+    RowBox[{"as", " ", 
+     SubscriptBox["prob", "0"]}], "="}], TraditionalForm]],ExpressionUUID->
   "9ba89c44-3def-4b6a-a5f2-ede7b353015d"],
  Cell[BoxData[
   FormBox[
    RowBox[{"Tr", "[", 
-    SuperscriptBox["\[Rho]", "2"]}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
+    SuperscriptBox["\[Rho]", "2"]}], TraditionalForm]],ExpressionUUID->
   "0e022273-78e5-4a56-b353-f5b2502947b3"],
  "  ",
  Cell[BoxData[
@@ -1227,7 +1226,8 @@ ancilla qubit ",
    3.8272407721152735`*^9, 3.8272407728647995`*^9}, {3.827240808213707*^9, 
    3.827240831829824*^9}, 3.8272409247161636`*^9, {3.82724109514158*^9, 
    3.8272411110757155`*^9}, {3.8272411752391224`*^9, 3.82724122372865*^9}, {
-   3.827241897225638*^9, 3.827242017278228*^9}},
+   3.827241897225638*^9, 3.827242017278228*^9}, {3.8272442893313437`*^9, 
+   3.827244289513113*^9}},
  Background->RGBColor[
   0.88, 1, 0.88],ExpressionUUID->"afe72775-5f82-4006-b1f2-f4aa6fd7e2c3"],
 
@@ -1590,19 +1590,17 @@ Cell[BoxData[
 
 Cell[TextData[{
  "Simulate the circuit in QuESTlink and compute the probability on the \
-ancilla qubit ",
+ancilla qubit as ",
  Cell[BoxData[
   FormBox[
    RowBox[{
     SubscriptBox[
-     RowBox[{"prob", "'"}], "0"], "="}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
+     RowBox[{"prob", "'"}], "0"], "="}], TraditionalForm]],ExpressionUUID->
   "4d24cb51-0eb4-4126-a5e6-67e3030208f8"],
  Cell[BoxData[
   FormBox[
    RowBox[{"Tr", "[", 
-    SuperscriptBox["\[Rho]", "2"]}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
+    SuperscriptBox["\[Rho]", "2"]}], TraditionalForm]],ExpressionUUID->
   "a3c39753-2260-4517-87de-3f28a03b53c7"],
  "]"
 }], "Text",
@@ -1619,7 +1617,8 @@ ancilla qubit ",
    3.827240831829824*^9}, 3.8272409247161636`*^9, {3.82724109514158*^9, 
    3.8272411110757155`*^9}, {3.8272411752391224`*^9, 3.82724122372865*^9}, {
    3.827241897225638*^9, 3.827242017278228*^9}, {3.827242052864476*^9, 
-   3.827242076348015*^9}, {3.827242773914975*^9, 3.8272427758897667`*^9}},
+   3.827242076348015*^9}, {3.827242773914975*^9, 3.8272427758897667`*^9}, {
+   3.827244286191642*^9, 3.8272442863292074`*^9}},
  Background->RGBColor[
   0.88, 1, 0.88],ExpressionUUID->"1c7aae1e-252a-4d7a-93a2-339c2e3ca655"],
 
@@ -1721,8 +1720,8 @@ Cell[BoxData["0.9998319592639485`"], "Output",
 }, Open  ]],
 
 Cell["\<\
-Observe that the mitigated expectation value is significantly smaller than \
-the unmitigated one\
+Observe that the mitigated error is significantly smaller than the \
+unmitigated one\
 \>", "Text",
  CellChangeTimes->{{3.8262650902861843`*^9, 3.826265091099492*^9}, {
    3.8262652312441196`*^9, 3.826265473334661*^9}, {3.8264936657315893`*^9, 
@@ -1738,7 +1737,8 @@ the unmitigated one\
    3.8272411110757155`*^9}, {3.8272411752391224`*^9, 3.82724122372865*^9}, {
    3.827241897225638*^9, 3.827242017278228*^9}, {3.827242052864476*^9, 
    3.827242076348015*^9}, {3.8272421731653633`*^9, 3.827242248014205*^9}, {
-   3.827242824087994*^9, 3.8272428288536186`*^9}},
+   3.827242824087994*^9, 3.8272428288536186`*^9}, {3.8272442778006916`*^9, 
+   3.827244278662634*^9}},
  Background->RGBColor[
   0.88, 1, 0.88],ExpressionUUID->"edb6f6d2-5636-4928-92f2-76db6e897b2d"],
 
@@ -1837,47 +1837,47 @@ Cell[27444, 586, 226, 3, 39, "Output",ExpressionUUID->"53318b51-e05f-4b41-a19f-a
 Cell[27697, 593, 468, 7, 66, "Subsubsection",ExpressionUUID->"abf6446b-d090-41d9-9302-d2b290512760"],
 Cell[CellGroupData[{
 Cell[28190, 604, 243, 4, 43, "Subsubsection",ExpressionUUID->"ac34b76b-d8c3-48a3-b731-92eb0e349739"],
-Cell[28436, 610, 1147, 21, 63, "Text",ExpressionUUID->"a6f2a76d-5e5d-4f63-996d-35b069580392"],
+Cell[28436, 610, 1181, 21, 63, "Text",ExpressionUUID->"a6f2a76d-5e5d-4f63-996d-35b069580392"],
 Cell[CellGroupData[{
-Cell[29608, 635, 1111, 31, 86, "Input",ExpressionUUID->"10b0ac48-97dc-425f-8ed4-7dc62a8118a4"],
-Cell[30722, 668, 3264, 52, 194, "Output",ExpressionUUID->"a370b5c7-5fe8-4b3d-837c-8641716e0955"]
+Cell[29642, 635, 1111, 31, 86, "Input",ExpressionUUID->"10b0ac48-97dc-425f-8ed4-7dc62a8118a4"],
+Cell[30756, 668, 3264, 52, 194, "Output",ExpressionUUID->"a370b5c7-5fe8-4b3d-837c-8641716e0955"]
 }, Open  ]],
-Cell[34001, 723, 1030, 14, 61, "Text",ExpressionUUID->"ea961777-5a5f-4964-bd20-556aa961db21"],
-Cell[35034, 739, 512, 12, 60, "Input",ExpressionUUID->"dfe7c3e3-6b1c-4042-b3ea-646cacc55456"],
-Cell[35549, 753, 1391, 26, 61, "Text",ExpressionUUID->"58d5db4f-a10f-4166-922d-697cc41f016d"],
+Cell[34035, 723, 1030, 14, 61, "Text",ExpressionUUID->"ea961777-5a5f-4964-bd20-556aa961db21"],
+Cell[35068, 739, 512, 12, 60, "Input",ExpressionUUID->"dfe7c3e3-6b1c-4042-b3ea-646cacc55456"],
+Cell[35583, 753, 1391, 26, 61, "Text",ExpressionUUID->"58d5db4f-a10f-4166-922d-697cc41f016d"],
 Cell[CellGroupData[{
-Cell[36965, 783, 1526, 32, 60, "Input",ExpressionUUID->"652dfccf-a0aa-4311-88df-76a7a9e5acf9"],
-Cell[38494, 817, 437, 6, 39, "Output",ExpressionUUID->"863bc678-62ea-4efd-8d9a-6443f29192c0"]
+Cell[36999, 783, 1526, 32, 60, "Input",ExpressionUUID->"652dfccf-a0aa-4311-88df-76a7a9e5acf9"],
+Cell[38528, 817, 437, 6, 39, "Output",ExpressionUUID->"863bc678-62ea-4efd-8d9a-6443f29192c0"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[38980, 829, 581, 10, 53, "Subsubsection",ExpressionUUID->"9dae5ff9-7f30-4a2f-9128-8a0abdd94fc0"],
-Cell[39564, 841, 1564, 28, 61, "Text",ExpressionUUID->"dd6b1fdb-4cef-4926-a9c6-8a959386b219"],
+Cell[39014, 829, 581, 10, 53, "Subsubsection",ExpressionUUID->"9dae5ff9-7f30-4a2f-9128-8a0abdd94fc0"],
+Cell[39598, 841, 1564, 28, 61, "Text",ExpressionUUID->"dd6b1fdb-4cef-4926-a9c6-8a959386b219"],
 Cell[CellGroupData[{
-Cell[41153, 873, 670, 16, 84, "Input",ExpressionUUID->"c62638dd-14d4-43e8-bb4e-97cea1b529fc"],
-Cell[41826, 891, 17909, 296, 403, "Output",ExpressionUUID->"e32eb7a6-39ae-4a39-894e-f7f5079b1b59"]
+Cell[41187, 873, 670, 16, 84, "Input",ExpressionUUID->"c62638dd-14d4-43e8-bb4e-97cea1b529fc"],
+Cell[41860, 891, 17909, 296, 403, "Output",ExpressionUUID->"e32eb7a6-39ae-4a39-894e-f7f5079b1b59"]
 }, Open  ]],
-Cell[59750, 1190, 1880, 41, 64, "Text",ExpressionUUID->"afe72775-5f82-4006-b1f2-f4aa6fd7e2c3"],
-Cell[61633, 1233, 753, 21, 84, "Input",ExpressionUUID->"37f1dc96-13e9-449a-9660-cc93409819df"],
-Cell[62389, 1256, 1167, 17, 61, "Text",ExpressionUUID->"65b9a174-57ae-4a9d-aecb-7ded2ef16b60"],
+Cell[59784, 1190, 1893, 41, 64, "Text",ExpressionUUID->"afe72775-5f82-4006-b1f2-f4aa6fd7e2c3"],
+Cell[61680, 1233, 753, 21, 84, "Input",ExpressionUUID->"37f1dc96-13e9-449a-9660-cc93409819df"],
+Cell[62436, 1256, 1167, 17, 61, "Text",ExpressionUUID->"65b9a174-57ae-4a9d-aecb-7ded2ef16b60"],
 Cell[CellGroupData[{
-Cell[63581, 1277, 3467, 54, 84, "Input",ExpressionUUID->"3bf20ede-d40f-479f-ac1a-c40499e5ea97"],
-Cell[67051, 1333, 14987, 254, 402, "Output",ExpressionUUID->"d2b1f70f-bd26-46c9-a096-20854434b829"]
+Cell[63628, 1277, 3467, 54, 84, "Input",ExpressionUUID->"3bf20ede-d40f-479f-ac1a-c40499e5ea97"],
+Cell[67098, 1333, 14987, 254, 402, "Output",ExpressionUUID->"d2b1f70f-bd26-46c9-a096-20854434b829"]
 }, Open  ]],
-Cell[82053, 1590, 1676, 33, 64, "Text",ExpressionUUID->"1c7aae1e-252a-4d7a-93a2-339c2e3ca655"],
-Cell[83732, 1625, 3222, 51, 60, "Input",ExpressionUUID->"13ea882f-0504-4b60-a7db-6c7bf32c92e9"],
-Cell[86957, 1678, 1478, 26, 61, "Text",ExpressionUUID->"1b4de1d4-abeb-4430-ac5c-fc42b08bdde9"],
+Cell[82100, 1590, 1665, 32, 64, "Text",ExpressionUUID->"1c7aae1e-252a-4d7a-93a2-339c2e3ca655"],
+Cell[83768, 1624, 3222, 51, 60, "Input",ExpressionUUID->"13ea882f-0504-4b60-a7db-6c7bf32c92e9"],
+Cell[86993, 1677, 1478, 26, 61, "Text",ExpressionUUID->"1b4de1d4-abeb-4430-ac5c-fc42b08bdde9"],
 Cell[CellGroupData[{
-Cell[88460, 1708, 294, 5, 35, "Input",ExpressionUUID->"7a6c942b-a7e1-40b7-b49f-ae696a82c5b8"],
-Cell[88757, 1715, 248, 4, 39, "Output",ExpressionUUID->"e2ca6c6f-ae20-4899-8141-990a4b886b57"]
+Cell[88496, 1707, 294, 5, 35, "Input",ExpressionUUID->"7a6c942b-a7e1-40b7-b49f-ae696a82c5b8"],
+Cell[88793, 1714, 248, 4, 39, "Output",ExpressionUUID->"e2ca6c6f-ae20-4899-8141-990a4b886b57"]
 }, Open  ]],
-Cell[89020, 1722, 1321, 20, 61, "Text",ExpressionUUID->"edb6f6d2-5636-4928-92f2-76db6e897b2d"],
+Cell[89056, 1721, 1361, 21, 61, "Text",ExpressionUUID->"edb6f6d2-5636-4928-92f2-76db6e897b2d"],
 Cell[CellGroupData[{
-Cell[90366, 1746, 395, 7, 60, "Input",ExpressionUUID->"fea5f61e-c97c-47d6-9977-11a25b31a430"],
-Cell[90764, 1755, 274, 4, 39, "Output",ExpressionUUID->"3256dc7e-56c5-4776-9089-11a9ad64fbac"],
-Cell[91041, 1761, 270, 4, 39, "Output",ExpressionUUID->"d8d858a9-ee6c-439c-b459-facbed08f49e"]
+Cell[90442, 1746, 395, 7, 60, "Input",ExpressionUUID->"fea5f61e-c97c-47d6-9977-11a25b31a430"],
+Cell[90840, 1755, 274, 4, 39, "Output",ExpressionUUID->"3256dc7e-56c5-4776-9089-11a9ad64fbac"],
+Cell[91117, 1761, 270, 4, 39, "Output",ExpressionUUID->"d8d858a9-ee6c-439c-b459-facbed08f49e"]
 }, Open  ]],
-Cell[91326, 1768, 1449, 21, 61, "Text",ExpressionUUID->"3482d965-ece0-4e03-873b-da19be1cd6d9"]
+Cell[91402, 1768, 1449, 21, 61, "Text",ExpressionUUID->"3482d965-ece0-4e03-873b-da19be1cd6d9"]
 }, Open  ]]
 }
 ]
